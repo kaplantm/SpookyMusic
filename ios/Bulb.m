@@ -18,6 +18,9 @@ RCT_EXTERN_METHOD(turnOn)
 
 RCT_EXTERN_METHOD(turnOff)
 
+RCT_EXTERN_METHOD(playGenre: (NSString *)genre)
+
 RCT_EXTERN_METHOD(getStatus: (RCTResponseSenderBlock)callback)
+
 
 @end

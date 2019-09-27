@@ -82,6 +82,8 @@ export default class App extends Component {
       this._alertForPhotosPermission();
     } else {
       console.log('do more stuff');
+
+      NativeModules.Bulb.playGenre('Rock');
     }
   };
 
