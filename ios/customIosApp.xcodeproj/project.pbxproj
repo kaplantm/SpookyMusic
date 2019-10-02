@@ -18,8 +18,8 @@
 		2DCD954D1E0B4F2C00145EB5 /* customIosAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* customIosAppTests.m */; };
 		46CE0B0DE3C64F297AD211CA /* libPods-customIosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3A5696B27D5928F7EF4557 /* libPods-customIosApp.a */; };
 		7643C73E015B03B5A5DE6F74 /* libPods-customIosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C85F198E326FB2C37DBBF1 /* libPods-customIosAppTests.a */; };
-		7856B927233E4FB800F88731 /* Bulb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B926233E4FB800F88731 /* Bulb.swift */; };
-		7856B929233E507300F88731 /* Bulb.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856B928233E507300F88731 /* Bulb.m */; };
+		7856B927233E4FB800F88731 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B926233E4FB800F88731 /* MusicPlayer.swift */; };
+		7856B929233E507300F88731 /* MusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856B928233E507300F88731 /* MusicPlayer.m */; };
 		8B54201855676E4D1CBE3D13 /* libPods-customIosApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1EACB4D6B30B177A7B37A7 /* libPods-customIosApp-tvOS.a */; };
 		FE81C37AE9A3318C19E5D3C6 /* libPods-customIosApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4484FA9FC8083EE54AFB1F49 /* libPods-customIosApp-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -65,8 +65,8 @@
 		51B9F1A9F17A51658F249558 /* Pods-customIosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-customIosAppTests/Pods-customIosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		53C85F198E326FB2C37DBBF1 /* libPods-customIosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-customIosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7856B925233E4FB800F88731 /* customIosApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "customIosApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		7856B926233E4FB800F88731 /* Bulb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulb.swift; sourceTree = "<group>"; };
-		7856B928233E507300F88731 /* Bulb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bulb.m; sourceTree = "<group>"; };
+		7856B926233E4FB800F88731 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		7856B928233E507300F88731 /* MusicPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayer.m; sourceTree = "<group>"; };
 		9FBBED81F1705927EC0E23CA /* Pods-customIosApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-customIosApp-tvOS/Pods-customIosApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A0B0B5097DA41171C4C69042 /* Pods-customIosApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-customIosApp-tvOS/Pods-customIosApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D9425BA7D22E14E82E36A549 /* Pods-customIosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosAppTests.release.xcconfig"; path = "Target Support Files/Pods-customIosAppTests/Pods-customIosAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,9 +137,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				7856B926233E4FB800F88731 /* Bulb.swift */,
+				7856B926233E4FB800F88731 /* MusicPlayer.swift */,
 				7856B925233E4FB800F88731 /* customIosApp-Bridging-Header.h */,
-				7856B928233E507300F88731 /* Bulb.m */,
+				7856B928233E507300F88731 /* MusicPlayer.m */,
 			);
 			name = customIosApp;
 			sourceTree = "<group>";
@@ -541,9 +541,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7856B927233E4FB800F88731 /* Bulb.swift in Sources */,
+				7856B927233E4FB800F88731 /* MusicPlayer.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				7856B929233E507300F88731 /* Bulb.m in Sources */,
+				7856B929233E507300F88731 /* MusicPlayer.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

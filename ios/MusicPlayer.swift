@@ -1,5 +1,5 @@
 //
-//  Bulb.swift
+//  MusicPlayer.swift
 //  customIosApp
 //
 //  Created by Toni Kaplan on 9/27/19.
@@ -10,9 +10,10 @@ import Foundation
 import MediaPlayer
 
 //The @objc attribute makes your Swift API available in Objective-C and the Objective-C runtime.
-@objc(Bulb)class Bulb: NSObject {
+@objc(MusicPlayer)class MusicPlayer: NSObject {
   
  
+  //TODO: Change systemMusicPlayer to applicationMusicPlayer
   @objc var musicPlayer = MPMusicPlayerController.systemMusicPlayer
 
   
@@ -21,17 +22,17 @@ import MediaPlayer
   @objc static var isOn = false
   
   @objc func turnOn() {
-    Bulb.isOn = true
-    print("Bulb is now ON")
+    MusicPlayer.isOn = true
+    print("MusicPlayer is now ON")
     
   }
   @objc func turnOff() {
-    Bulb.isOn = false
-    print("Bulb is now OFF")
+    MusicPlayer.isOn = false
+    print("MusicPlayer is now OFF")
   }
   
   @objc func getStatus(_ callback: RCTResponseSenderBlock) {
-    callback([NSNull(), Bulb.isOn])
+    callback([NSNull(), MusicPlayer.isOn])
   }
 
   

@@ -19,15 +19,15 @@ export default class App extends Component {
     this.updateStatus();
   }
   turnOn = () => {
-    NativeModules.Bulb.turnOn();
+    NativeModules.MusicPlayer.turnOn();
     this.updateStatus();
   };
   turnOff = () => {
-    NativeModules.Bulb.turnOff();
+    NativeModules.MusicPlayer.turnOff();
     this.updateStatus();
   };
   updateStatus = () => {
-    NativeModules.Bulb.getStatus((error, isOn) => {
+    NativeModules.MusicPlayer.getStatus((error, isOn) => {
       this.setState({isOn: isOn});
     });
   };
@@ -83,7 +83,7 @@ export default class App extends Component {
     } else {
       console.log('do more stuff');
 
-      NativeModules.Bulb.playGenre('Rock');
+      NativeModules.MusicPlayer.playGenre('Rock');
     }
   };
 
@@ -91,7 +91,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to Light App!!</Text>
-        <Text> Bulb is {this.state.isOn ? 'ON' : 'OFF'}</Text>
+        <Text> MusicPlayer is {this.state.isOn ? 'ON' : 'OFF'}</Text>
 
         {!this.state.isOn ? (
           <Button onPress={this.turnOn} title="Turn ON " color="#FF6347" />
