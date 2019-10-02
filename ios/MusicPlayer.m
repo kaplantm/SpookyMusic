@@ -22,5 +22,6 @@ RCT_EXTERN_METHOD(playGenre: (NSString *)genre)
 
 RCT_EXTERN_METHOD(getStatus: (RCTResponseSenderBlock)callback)
 
+RCT_EXTERN_METHOD(setOnProgress: (RCTResponseSenderBlock)callback)
 
 @end

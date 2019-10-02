@@ -34,6 +34,7 @@ export default class App extends Component {
 
   // Check the status of a single permission
   componentDidMount() {
+    NativeModules.MusicPlayer.setOnProgress(() => console.log('setOnProgress'));
     Permissions.check('mediaLibrary').then(response => {
       // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
       this.setState({hasMediaPermissions: response});

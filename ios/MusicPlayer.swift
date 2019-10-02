@@ -15,10 +15,10 @@ import MediaPlayer
  
   //TODO: Change systemMusicPlayer to applicationMusicPlayer
   @objc var musicPlayer = MPMusicPlayerController.systemMusicPlayer
-
   
   @objc static var isMusicAuthorized = false;
   
+  // isOn, turnOn and turnOff are just being kept around as examples/references for now
   @objc static var isOn = false
   
   @objc func turnOn() {
@@ -53,10 +53,50 @@ import MediaPlayer
     return true
   }
   
-  // @objc let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-  //   var nowPlaying = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
-  //   var trackArtist = nowPlaying?.value(forProperty: MPMediaItemPropertyArtist) as! String
-  // })
+  // This works?
+//   @objc let timer3 = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+//     print("here2")
+//   })
+  
+  @objc func updateCounting(_ timer: Timer){
+      print("counting..")
+  }
+  
+
+  private var timer: Timer?
+
+  // https://stackoverflow.com/questions/41755271/timer-doesnt-work-in-native-react-native-component
+    @objc
+    func setOnProgress(_ callback: RCTResponseSenderBlock){
+    DispatchQueue.main.async(execute: {
+
+      self.invalidateProgressTracker()
+//      self.timer = Timer.scheduledTimer(
+//        timeInterval: 0.1,
+//        target: self,
+//        selector: #selector(self.handleMyFunction),
+//        userInfo: nil,
+//        repeats: true)
+//    })
+      self.timer = Timer.scheduledTimer(
+        withTimeInterval: 0.1,
+        repeats: true,
+        block: { timer in
+          print("here2")
+        }
+      )
+          })
+  }
+
+
+   @objc func handleMyFunction() {
+       // Code here
+    print("yo ")
+   }
+
+  @objc func invalidateProgressTracker(){
+     timer?.invalidate()
+   }
 
   
 }
