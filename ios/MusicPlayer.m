@@ -8,20 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-#import "React/RCTBridgeModule.h"
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+
+
+//@interface MusicPlayer : RCTEventEmitter <RCTBridgeModule>
+@interface RCT_EXTERN_MODULE(MusicPlayer, RCTEventEmitter)
+
+  RCT_EXTERN_METHOD(setOnProgress: (RCTResponseSenderBlock)callback)
+@end
 
 // React Native will not expose any function of MusicPlayer to React JavaScript unless explicitly done. To do so we have used RCT_EXPORT_METHOD() macro.
 
-@interface RCT_EXTERN_MODULE(MusicPlayer, NSObject)
+//@interface RCT_EXTERN_MODULE(MusicPlayer, RCTEventEmitter)
 
-RCT_EXTERN_METHOD(turnOn)
+//RCT_EXTERN_METHOD(turnOn)
+//
+//RCT_EXTERN_METHOD(turnOff)
+//
+//RCT_EXTERN_METHOD(playGenre: (NSString *)genre)
+//
+//RCT_EXTERN_METHOD(getStatus: (RCTResponseSenderBlock)callback)
+//
+//RCT_EXTERN_METHOD(setOnProgress: (RCTResponseSenderBlock)callback)
 
-RCT_EXTERN_METHOD(turnOff)
-
-RCT_EXTERN_METHOD(playGenre: (NSString *)genre)
-
-RCT_EXTERN_METHOD(getStatus: (RCTResponseSenderBlock)callback)
-
-RCT_EXTERN_METHOD(setOnProgress: (RCTResponseSenderBlock)callback)
-
-@end
+//@end

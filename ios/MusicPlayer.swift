@@ -10,8 +10,13 @@ import Foundation
 import MediaPlayer
 
 //The @objc attribute makes your Swift API available in Objective-C and the Objective-C runtime.
-@objc(MusicPlayer)class MusicPlayer: NSObject {
-  
+@objc(MusicPlayer)class MusicPlayer: RCTEventEmitter {
+
+  override func supportedEvents() -> [String]! {
+    return ["updateProgress"]
+  }
+  // ReactNativeEventEmitter is instantiated by React Native with the bridge.
+//  private static var eventEmitter: ReactNativeEventEmitter!
  
   //TODO: Change systemMusicPlayer to applicationMusicPlayer
   @objc var musicPlayer = MPMusicPlayerController.systemMusicPlayer
@@ -49,9 +54,9 @@ import MediaPlayer
     musicPlayer.play()
   }
   
-  @objc static func requiresMainQueueSetup() -> Bool {
-    return true
-  }
+//  @objc static func requiresMainQueueSetup() -> Bool {
+//    return true
+//  }
   
   // This works?
 //   @objc let timer3 = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
@@ -67,7 +72,7 @@ import MediaPlayer
 
   // https://stackoverflow.com/questions/41755271/timer-doesnt-work-in-native-react-native-component
     @objc
-    func setOnProgress(_ callback: RCTResponseSenderBlock){
+    func setOnProgress(_ callback: @escaping RCTResponseSenderBlock){
     DispatchQueue.main.async(execute: {
 
       self.invalidateProgressTracker()
@@ -82,7 +87,9 @@ import MediaPlayer
         withTimeInterval: 0.1,
         repeats: true,
         block: { timer in
-          print("here2")
+//          callback([NSNull(), MusicPlayer.isOn])
+          print("block")
+          self.sendEvent(withName: "updateProgress", body: "updateProgress" )
         }
       )
           })

@@ -6,6 +6,7 @@ import {
   Alert,
   View,
   NativeModules,
+  NativeEventEmitter,
   Button,
 } from 'react-native';
 
@@ -16,10 +17,18 @@ export default class App extends Component {
       hasMediaPermissions: 'undetermined',
       isOn: false,
     };
+    this.myModuleEvt = new NativeEventEmitter(NativeModules.MusicPlayer);
+    var subscription = this.myModuleEvt.addListener(
+      'updateProgress',
+      progress => {
+        console.log('updateProgress');
+        console.log(JSON.stringify(progress, null, 2));
+      },
+    );
     this.updateStatus();
   }
   turnOn = () => {
-    NativeModules.MusicPlayer.turnOn();
+    // NativeModules.MusicPlayer.turnOn();
     this.updateStatus();
   };
   turnOff = () => {
@@ -27,9 +36,9 @@ export default class App extends Component {
     this.updateStatus();
   };
   updateStatus = () => {
-    NativeModules.MusicPlayer.getStatus((error, isOn) => {
-      this.setState({isOn: isOn});
-    });
+    // NativeModules.MusicPlayer.getStatus((error, isOn) => {
+    //   this.setState({isOn: isOn});
+    // });
   };
 
   // Check the status of a single permission
@@ -84,7 +93,7 @@ export default class App extends Component {
     } else {
       console.log('do more stuff');
 
-      NativeModules.MusicPlayer.playGenre('Rock');
+      // NativeModules.MusicPlayer.playGenre('Rock');
     }
   };
 
