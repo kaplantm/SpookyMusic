@@ -54,45 +54,36 @@ import MediaPlayer
     musicPlayer.play()
   }
   
-//  @objc static func requiresMainQueueSetup() -> Bool {
-//    return true
-//  }
-  
-  // This works?
-//   @objc let timer3 = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-//     print("here2")
-//   })
+  @objc override static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
   
   @objc func updateCounting(_ timer: Timer){
       print("counting..")
   }
   
-
   private var timer: Timer?
 
   // https://stackoverflow.com/questions/41755271/timer-doesnt-work-in-native-react-native-component
     @objc
-    func setOnProgress(_ callback: @escaping RCTResponseSenderBlock){
-    DispatchQueue.main.async(execute: {
+    func initalizeProgressTracker(){
+      self.timer = nil;
+      self.invalidateProgressTracker();
+      print("initalizeProgressTracker")
+        DispatchQueue.main.async(execute: {
+          if(self.timer == nil){
 
-      self.invalidateProgressTracker()
-//      self.timer = Timer.scheduledTimer(
-//        timeInterval: 0.1,
-//        target: self,
-//        selector: #selector(self.handleMyFunction),
-//        userInfo: nil,
-//        repeats: true)
-//    })
-      self.timer = Timer.scheduledTimer(
-        withTimeInterval: 0.1,
-        repeats: true,
-        block: { timer in
-//          callback([NSNull(), MusicPlayer.isOn])
-          print("block")
-          self.sendEvent(withName: "updateProgress", body: "updateProgress" )
-        }
-      )
-          })
+            print("nil")
+            self.timer = Timer.scheduledTimer(
+              withTimeInterval: 5,
+              repeats: true,
+              block: { timer in
+                self.sendEvent(withName: "updateProgress", body: "updateProgress" )
+              }
+            )
+            
+          }
+              })
   }
 
 
@@ -102,7 +93,15 @@ import MediaPlayer
    }
 
   @objc func invalidateProgressTracker(){
-     timer?.invalidate()
+    print("invalidateProgressTracker")
+
+    DispatchQueue.main.async(execute: {
+      if self.timer != nil {
+        self.timer!.invalidate()
+        self.timer = nil
+      }
+    }
+    )
    }
 
   
