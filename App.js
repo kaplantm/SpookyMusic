@@ -31,7 +31,7 @@ export default class App extends Component {
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+    // console.log('componentWillUnmount');
     // this.MusicPlayer.invalidateProgressTracker();
   }
   // Request permission to access photos
@@ -70,8 +70,7 @@ export default class App extends Component {
     if (!this.state.hasMediaPermissions === 'authorized') {
       this._alertForPhotosPermission();
     } else {
-      console.log('do more stuff');
-
+      // console.log('do more stuff');
       // this.MusicPlayer.playGenre('Rock');
     }
   };

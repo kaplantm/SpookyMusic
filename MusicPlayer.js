@@ -8,6 +8,23 @@ class MusicPlayer {
   onProgress = null;
   subscription = null;
 
+  //   addPlayerStateObserver() {
+  //     NativeModules.MusicPlayer.addPlayerStateObserver();
+  //   }
+  setOnPlayerStateChange(onPlayerStateChange) {
+    this.stopProgressTracker();
+
+    NativeModules.MusicPlayer.addPlayerStateObserver();
+
+    this.onPlayerStateChangeSubscription = this.eventEmitter.addListener(
+      'updatePlayerState',
+      ({nowPlayingItemName, nowPlayingItemArtist}) => {
+        this.nowPlayingItemName = nowPlayingItemName;
+        this.nowPlayingItemArtist = nowPlayingItemArtist;
+      },
+    );
+  }
+
   stopProgressTracker() {
     NativeModules.MusicPlayer.invalidateProgressTracker();
     this.removeOnProgess();
@@ -15,6 +32,24 @@ class MusicPlayer {
 
   playGenre(genre) {
     NativeModules.MusicPlayer.playGenre(genre);
+  }
+
+  getCurrentPlaybackTime() {
+    NativeModules.MusicPlayer.getCurrentPlaybackTime(
+      (error, currentPlaybackTime) => {
+        //   this.setState({isOn: isOn});
+        // console.log('getCurrentPlaybackTime', currentPlaybackTime);
+      },
+    );
+  }
+
+  getCurrentSongDuration() {
+    NativeModules.MusicPlayer.getCurrentSongDuration(
+      (error, currentSongDuration) => {
+        //   this.setState({isOn: isOn});
+        // console.log('getCurrentSongDuration', currentSongDuration);
+      },
+    );
   }
 
   setOnProgress(onProgress) {
@@ -31,6 +66,13 @@ class MusicPlayer {
     if (this.subscription) {
       this.subscription.remove();
       this.subscription = null;
+    }
+  }
+
+  removeOnPlayerStateChange() {
+    if (this.onPlayerStateChangeSubscription) {
+      this.onPlayerStateChangeSubscription.remove();
+      this.onPlayerStateChangeSubscription = null;
     }
   }
 }

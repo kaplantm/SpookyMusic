@@ -13,7 +13,7 @@ import MediaPlayer
 @objc(MusicPlayer)class MusicPlayer: RCTEventEmitter {
 
   override func supportedEvents() -> [String]! {
-    return ["updateProgress"]
+    return ["updateProgress", "updatePlayerState"]
   }
   // ReactNativeEventEmitter is instantiated by React Native with the bridge.
 //  private static var eventEmitter: ReactNativeEventEmitter!
@@ -23,23 +23,21 @@ import MediaPlayer
   
   @objc static var isMusicAuthorized = false;
   
-  // isOn, turnOn and turnOff are just being kept around as examples/references for now
-  @objc static var isOn = false
   
-  @objc func turnOn() {
-    MusicPlayer.isOn = true
-    print("MusicPlayer is now ON")
-    
-  }
-  @objc func turnOff() {
-    MusicPlayer.isOn = false
-    print("MusicPlayer is now OFF")
-  }
   
-  @objc func getStatus(_ callback: RCTResponseSenderBlock) {
-    callback([NSNull(), MusicPlayer.isOn])
+//  @objc func getStatus(_ callback: RCTResponseSenderBlock) {
+//    callback([NSNull(), MusicPlayer.isOn])
+//  }
+  
+  @objc func getCurrentPlaybackTime(_ callback: RCTResponseSenderBlock) {
+    let currentPlaybackTime = self.musicPlayer.currentPlaybackTime as Double
+    callback([NSNull(), currentPlaybackTime])
   }
 
+  @objc func getCurrentSongDuration(_ callback: RCTResponseSenderBlock) {
+    let nowPlayingItemDuration = self.musicPlayer.nowPlayingItem?.value(forProperty: "MPMediaItemPropertyPlaybackDuration") as! String
+    callback([NSNull(), nowPlayingItemDuration])
+  }
   
 
   @objc func playGenre(_ genre: String){
@@ -75,10 +73,30 @@ import MediaPlayer
 
             print("nil")
             self.timer = Timer.scheduledTimer(
-              withTimeInterval: 5,
+              withTimeInterval: 1,
               repeats: true,
               block: { timer in
-                self.sendEvent(withName: "updateProgress", body: "updateProgress" )
+                let nowPlayingItem = self.musicPlayer.nowPlayingItem
+                if(nowPlayingItem != nil){
+                  let nowPlayingItemDuration = self.musicPlayer.nowPlayingItem?.value(forProperty: "playbackDuration") as! Double
+                  let currentTime = self.musicPlayer.currentPlaybackTime as Double
+                  let remainingTime = nowPlayingItemDuration - currentTime;
+
+//                  print("currentTime")
+//                  print(currentTime)
+//                  print("remainingTime")
+//                  print(remainingTime)
+                  let params = [
+                  "nowPlayingItemDuration": nowPlayingItemDuration,
+                  "currentTime": currentTime,
+                  "remainingTime": remainingTime
+                  ]
+                  
+                  self.sendEvent(withName: "updateProgress", body: params )
+                }
+                else{
+                  self.sendEvent(withName: "updateProgress", body: -1 )
+                }
               }
             )
             
@@ -86,11 +104,6 @@ import MediaPlayer
               })
   }
 
-
-   @objc func handleMyFunction() {
-       // Code here
-    print("yo ")
-   }
 
   @objc func invalidateProgressTracker(){
     print("invalidateProgressTracker")
@@ -102,6 +115,41 @@ import MediaPlayer
       }
     }
     )
+   }
+  
+  
+  
+  @objc func updateNowPlayingInfo(){
+    print("updateNowPlayingInfo")
+
+    let nowPlayingItem = self.musicPlayer.nowPlayingItem
+    
+    if(nowPlayingItem != nil){
+        let nowPlayingItemName = self.musicPlayer.nowPlayingItem?.value(forProperty: "title") as! String
+        let nowPlayingItemArtist = self.musicPlayer.nowPlayingItem?.value(forProperty: "artist") as! String
+      let params = [
+                  "nowPlayingItemName": nowPlayingItemName,
+                  "nowPlayingItemArtist": nowPlayingItemArtist,
+                  ]
+      self.sendEvent(withName: "updatePlayerState", body: params )
+      }
+       
+
+    else{
+      let params : [String : Any?] = [
+                      "nowPlayingItemName": nil,
+                      "nowPlayingItemArtist": nil,
+        ]
+      self.sendEvent(withName: "updatePlayerState", body: params )
+    }
+    }
+  
+  @objc func addPlayerStateObserver(){
+    print("addPlayerStateObserver")
+    
+    musicPlayer.beginGeneratingPlaybackNotifications()
+
+    NotificationCenter.default.addObserver(self, selector:#selector(self.updateNowPlayingInfo), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
    }
 
   

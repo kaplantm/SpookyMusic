@@ -9,6 +9,7 @@ import {
   NativeEventEmitter,
   Button,
 } from 'react-native';
+import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import MusicPlayer from './MusicPlayer';
 
 export default class Player extends Component {
@@ -16,15 +17,26 @@ export default class Player extends Component {
     super(props);
   }
 
+  state = {
+    progress: 0,
+  };
+
   // Check the status of a single permission
   componentDidMount() {
-    console.log('componentDidMount');
+    // console.log('componentDidMount');
     this.MusicPlayer = MusicPlayer;
-    this.MusicPlayer.setOnProgress(() => console.log('doggo'));
+    this.MusicPlayer.setOnPlayerStateChange();
+    this.MusicPlayer.setOnProgress(({nowPlayingItemDuration, currentTime}) => {
+      //   console.log({currentTime, nowPlayingItemDuration});
+      if (nowPlayingItemDuration) {
+        this.setState({progress: currentTime / nowPlayingItemDuration});
+      }
+    });
   }
 
   componentWillUnmount() {
     this.MusicPlayer.stopProgressTracker();
+    this.MusicPlayer.removeOnPlayerStateChange();
   }
 
   onGenreClick = genre => {
@@ -32,8 +44,18 @@ export default class Player extends Component {
   };
 
   render() {
+    // console.log('state progress', this.state.progress);
     return (
       <View style={styles.container}>
+        <AnimatedCircularProgress
+          size={120}
+          width={15}
+          duration={990}
+          fill={this.state.progress * 100}
+          tintColor="#00e0ff"
+          //   onAnimationComplete={() => console.log('onAnimationComplete')}
+          backgroundColor="#3d5875"
+        />
         <Button
           onPress={() => this.onGenreClick('Rock')}
           title="Rock"
