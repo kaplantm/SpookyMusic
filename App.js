@@ -78,8 +78,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Light App!!</Text>
-        <Text> MusicPlayer is {this.state.isOn ? 'ON' : 'OFF'}</Text>
+        {/* <Text> MusicPlayer is {this.state.isOn ? 'ON' : 'OFF'}</Text>
 
         {!this.state.isOn ? (
           <Button
@@ -94,7 +93,8 @@ export default class App extends Component {
             color="#FF6347"
           />
         )}
-        {this.state.isOn && <Player />}
+        {this.state.isOn && <Player />} */}
+        <Player />
       </View>
     );
   }

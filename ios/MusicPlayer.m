@@ -19,8 +19,11 @@
   RCT_EXTERN_METHOD(invalidateProgressTracker)
 
   RCT_EXTERN_METHOD(addPlayerStateObserver)
+  RCT_EXTERN_METHOD(play)
+  RCT_EXTERN_METHOD(pause)
 
   RCT_EXTERN_METHOD(playGenre: (NSString *)genre)
+  RCT_EXTERN_METHOD(initalizePlayerWithPlaylist: (NSString *)playlist)
 
   RCT_EXTERN_METHOD(getCurrentPlaybackTime: (RCTResponseSenderBlock)callback)
   RCT_EXTERN_METHOD(getCurrentSongDuration: (RCTResponseSenderBlock)callback)

@@ -10,7 +10,6 @@ import {
   Button,
 } from 'react-native';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
-import MusicPlayer from './MusicPlayer';
 
 export default class Player extends Component {
   constructor(props) {
@@ -24,9 +23,12 @@ export default class Player extends Component {
   // Check the status of a single permission
   componentDidMount() {
     // console.log('componentDidMount');
-    this.MusicPlayer = MusicPlayer;
-    this.MusicPlayer.setOnPlayerStateChange();
-    this.MusicPlayer.setOnProgress(({nowPlayingItemDuration, currentTime}) => {
+    this.NativeMusicPlayer = NativeModules.MusicPlayer;
+    this.MusicPlayerEventEmitter = new NativeEventEmitter(
+      NativeModules.MusicPlayer,
+    );
+    this.setOnPlayerStateChange();
+    this.setOnProgress(({nowPlayingItemDuration, currentTime}) => {
       //   console.log({currentTime, nowPlayingItemDuration});
       if (nowPlayingItemDuration) {
         this.setState({progress: currentTime / nowPlayingItemDuration});
@@ -34,31 +36,92 @@ export default class Player extends Component {
     });
   }
 
+  setOnPlayerStateChange(onPlayerStateChange) {
+    this.stopProgressTracker();
+
+    this.NativeMusicPlayer.addPlayerStateObserver();
+
+    this.onPlayerStateChangeSubscription = this.MusicPlayerEventEmitter.addListener(
+      'updatePlayerState',
+      ({nowPlayingItemName, nowPlayingItemArtist}) => {
+        this.setState({nowPlayingItemName, nowPlayingItemArtist});
+      },
+    );
+  }
+
+  setOnProgress(onProgress) {
+    this.stopProgressTracker();
+
+    this.NativeMusicPlayer.initalizeProgressTracker();
+    this.updateProgressSubscription = this.MusicPlayerEventEmitter.addListener(
+      'updateProgress',
+      onProgress,
+    );
+  }
+
+  stopProgressTracker() {
+    this.NativeMusicPlayer.invalidateProgressTracker();
+    this.removeOnProgess();
+  }
+
+  removeOnProgess() {
+    if (this.updateProgressSubscription) {
+      this.updateProgressSubscription.remove();
+      this.updateProgressSubscription = null;
+    }
+  }
+
+  removeOnPlayerStateChange() {
+    if (this.onPlayerStateChangeSubscription) {
+      this.onPlayerStateChangeSubscription.remove();
+      this.onPlayerStateChangeSubscription = null;
+    }
+  }
+
   componentWillUnmount() {
-    this.MusicPlayer.stopProgressTracker();
-    this.MusicPlayer.removeOnPlayerStateChange();
+    this.stopProgressTracker();
+    this.removeOnPlayerStateChange();
   }
 
   onGenreClick = genre => {
-    this.MusicPlayer.playGenre('Rock');
+    this.NativeMusicPlayer.playGenre(genre);
   };
 
   render() {
-    // console.log('state progress', this.state.progress);
     return (
       <View style={styles.container}>
+        <View style={styles.metaData}>
+          <Text>Title: {this.state.nowPlayingItemName}</Text>
+          <Text>Artist: {this.state.nowPlayingItemArtist}</Text>
+        </View>
         <AnimatedCircularProgress
           size={120}
           width={15}
           duration={990}
           fill={this.state.progress * 100}
           tintColor="#00e0ff"
-          //   onAnimationComplete={() => console.log('onAnimationComplete')}
           backgroundColor="#3d5875"
         />
         <Button
           onPress={() => this.onGenreClick('Rock')}
           title="Rock"
+          color="#FF6347"
+        />
+        <Button
+          onPress={() => this.NativeMusicPlayer.play()}
+          title="Play"
+          color="#FF6347"
+        />
+        <Button
+          onPress={() =>
+            this.NativeMusicPlayer.initalizePlayerWithPlaylist('Spooky')
+          }
+          title="Yo"
+          color="#FF6347"
+        />
+        <Button
+          onPress={() => this.NativeMusicPlayer.pause()}
+          title="Pause"
           color="#FF6347"
         />
       </View>
@@ -72,5 +135,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  metaData: {
+    margin: 20,
   },
 });

@@ -19,7 +19,8 @@ import MediaPlayer
 //  private static var eventEmitter: ReactNativeEventEmitter!
  
   //TODO: Change systemMusicPlayer to applicationMusicPlayer
-  @objc var musicPlayer = MPMusicPlayerController.systemMusicPlayer
+//  @objc var musicPlayer = MPMusicPlayerController.systemMusicPlayer
+   @objc var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
   
   @objc static var isMusicAuthorized = false;
   
@@ -40,6 +41,32 @@ import MediaPlayer
   }
   
 
+  @objc func pause(){
+    print("pause")
+    musicPlayer.pause()
+  }
+  
+  @objc func play(){
+     print("play")
+     musicPlayer.prepareToPlay()
+     musicPlayer.play()
+   }
+    
+  @objc func initalizePlayerWithPlaylist(_ playlist: String){
+    print("playGenre")
+    print(playlist)
+    let myPlaylistQuery = MPMediaQuery.playlists()
+    let playlists = myPlaylistQuery.collections
+    print(playlists)
+//    musicPlayer.stop()
+//    musicPlayer.shuffleMode = .songs
+//    let query = MPMediaQuery()
+    let predicate = MPMediaPropertyPredicate(value: playlist, forProperty: MPMediaPlaylistPropertyName)
+    myPlaylistQuery.addFilterPredicate(predicate)
+    musicPlayer.setQueue(with: myPlaylistQuery)
+    musicPlayer.play()
+  }
+  
   @objc func playGenre(_ genre: String){
     print("playGenre")
     print(genre)
@@ -54,10 +81,6 @@ import MediaPlayer
   
   @objc override static func requiresMainQueueSetup() -> Bool {
     return true
-  }
-  
-  @objc func updateCounting(_ timer: Timer){
-      print("counting..")
   }
   
   private var timer: Timer?
@@ -82,10 +105,6 @@ import MediaPlayer
                   let currentTime = self.musicPlayer.currentPlaybackTime as Double
                   let remainingTime = nowPlayingItemDuration - currentTime;
 
-//                  print("currentTime")
-//                  print(currentTime)
-//                  print("remainingTime")
-//                  print(remainingTime)
                   let params = [
                   "nowPlayingItemDuration": nowPlayingItemDuration,
                   "currentTime": currentTime,
@@ -106,8 +125,6 @@ import MediaPlayer
 
 
   @objc func invalidateProgressTracker(){
-    print("invalidateProgressTracker")
-
     DispatchQueue.main.async(execute: {
       if self.timer != nil {
         self.timer!.invalidate()
@@ -120,8 +137,6 @@ import MediaPlayer
   
   
   @objc func updateNowPlayingInfo(){
-    print("updateNowPlayingInfo")
-
     let nowPlayingItem = self.musicPlayer.nowPlayingItem
     
     if(nowPlayingItem != nil){
@@ -145,8 +160,6 @@ import MediaPlayer
     }
   
   @objc func addPlayerStateObserver(){
-    print("addPlayerStateObserver")
-    
     musicPlayer.beginGeneratingPlaybackNotifications()
 
     NotificationCenter.default.addObserver(self, selector:#selector(self.updateNowPlayingInfo), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
