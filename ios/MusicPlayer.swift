@@ -53,29 +53,12 @@ import MediaPlayer
    }
     
   @objc func initalizePlayerWithPlaylist(_ playlist: String){
-    print("playGenre")
     print(playlist)
     let myPlaylistQuery = MPMediaQuery.playlists()
-    let playlists = myPlaylistQuery.collections
-    print(playlists)
-//    musicPlayer.stop()
-//    musicPlayer.shuffleMode = .songs
-//    let query = MPMediaQuery()
+    musicPlayer.stop()
     let predicate = MPMediaPropertyPredicate(value: playlist, forProperty: MPMediaPlaylistPropertyName)
     myPlaylistQuery.addFilterPredicate(predicate)
     musicPlayer.setQueue(with: myPlaylistQuery)
-    musicPlayer.play()
-  }
-  
-  @objc func playGenre(_ genre: String){
-    print("playGenre")
-    print(genre)
-    musicPlayer.stop()
-    musicPlayer.shuffleMode = .songs
-    let query = MPMediaQuery()
-    let predicate = MPMediaPropertyPredicate(value: genre, forProperty: MPMediaItemPropertyGenre)
-    query.addFilterPredicate(predicate)
-    musicPlayer.setQueue(with: query)
     musicPlayer.play()
   }
   
@@ -93,8 +76,6 @@ import MediaPlayer
       print("initalizeProgressTracker")
         DispatchQueue.main.async(execute: {
           if(self.timer == nil){
-
-            print("nil")
             self.timer = Timer.scheduledTimer(
               withTimeInterval: 1,
               repeats: true,
@@ -137,12 +118,10 @@ import MediaPlayer
   
   
   @objc func updateNowPlayingInfo(){
-    let nowPlayingItem = self.musicPlayer.nowPlayingItem
-    
     if(nowPlayingItem != nil){
-        let nowPlayingItemName = self.musicPlayer.nowPlayingItem?.value(forProperty: "title") as! String
-        let nowPlayingItemArtist = self.musicPlayer.nowPlayingItem?.value(forProperty: "artist") as! String
-      let params = [
+        let nowPlayingItemName = self.musicPlayer.nowPlayingItem?.value(forProperty: "title")
+        let nowPlayingItemArtist = self.musicPlayer.nowPlayingItem?.value(forProperty: "artist")
+      let params : [String : Any?] = [
                   "nowPlayingItemName": nowPlayingItemName,
                   "nowPlayingItemArtist": nowPlayingItemArtist,
                   ]

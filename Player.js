@@ -43,8 +43,11 @@ export default class Player extends Component {
 
     this.onPlayerStateChangeSubscription = this.MusicPlayerEventEmitter.addListener(
       'updatePlayerState',
-      ({nowPlayingItemName, nowPlayingItemArtist}) => {
-        this.setState({nowPlayingItemName, nowPlayingItemArtist});
+      ({nowPlayingItemName, nowPlayingItemArtist, isPlaying}) => {
+        this.setState({
+          nowPlayingItemName,
+          nowPlayingItemArtist,
+        });
       },
     );
   }
@@ -88,11 +91,17 @@ export default class Player extends Component {
   };
 
   render() {
+    // Add skip song (And another song in playlist)
+    // make spooky
     return (
       <View style={styles.container}>
         <View style={styles.metaData}>
-          <Text>Title: {this.state.nowPlayingItemName}</Text>
-          <Text>Artist: {this.state.nowPlayingItemArtist}</Text>
+          <Text style={styles.songTitle}>
+            {this.state.nowPlayingItemName || ' '}
+          </Text>
+          <Text style={styles.artist}>
+            {this.state.nowPlayingItemArtist || ' '}
+          </Text>
         </View>
         <AnimatedCircularProgress
           size={120}
@@ -100,30 +109,38 @@ export default class Player extends Component {
           duration={990}
           fill={this.state.progress * 100}
           tintColor="#00e0ff"
-          backgroundColor="#3d5875"
-        />
-        <Button
-          onPress={() => this.onGenreClick('Rock')}
-          title="Rock"
-          color="#FF6347"
-        />
-        <Button
-          onPress={() => this.NativeMusicPlayer.play()}
-          title="Play"
-          color="#FF6347"
-        />
-        <Button
-          onPress={() =>
-            this.NativeMusicPlayer.initalizePlayerWithPlaylist('Spooky')
-          }
-          title="Yo"
-          color="#FF6347"
-        />
-        <Button
-          onPress={() => this.NativeMusicPlayer.pause()}
-          title="Pause"
-          color="#FF6347"
-        />
+          backgroundColor="#3d5875">
+          {fill => {
+            if (this.state.isPlaying) {
+              return (
+                <Button
+                  onPress={() => {
+                    this.NativeMusicPlayer.pause();
+                    this.setState({isPlaying: false});
+                  }}
+                  title="Pause"
+                  color="#FF6347"
+                />
+              );
+            } else {
+              return (
+                <Button
+                  onPress={() => {
+                    if (this.state.isPlaying === undefined) {
+                      this.NativeMusicPlayer.initalizePlayerWithPlaylist(
+                        'Spooky',
+                      );
+                    }
+                    this.NativeMusicPlayer.play();
+                    this.setState({isPlaying: true});
+                  }}
+                  title="Play"
+                  color="#FF6347"
+                />
+              );
+            }
+          }}
+        </AnimatedCircularProgress>
       </View>
     );
   }
@@ -135,6 +152,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  songTitle: {
+    textAlign: 'center',
+    fontSize: 30,
+  },
+  artist: {
+    textAlign: 'center',
   },
   metaData: {
     margin: 20,
