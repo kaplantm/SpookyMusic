@@ -7,9 +7,9 @@ import {
   View,
   NativeModules,
   NativeEventEmitter,
-  Button,
+  ImageBackground,
 } from 'react-native';
-import {AnimatedCircularProgress} from 'react-native-circular-progress';
+import PlayerProgress from './PlayerProgress';
 
 export default class Player extends Component {
   constructor(props) {
@@ -90,58 +90,45 @@ export default class Player extends Component {
     this.NativeMusicPlayer.playGenre(genre);
   };
 
+  onPause = () => {
+    this.NativeMusicPlayer.pause();
+    this.setState({isPlaying: false});
+  };
+
+  onPlay = () => {
+    if (this.state.isPlaying === undefined) {
+      this.NativeMusicPlayer.initalizePlayerWithPlaylist('Spooky');
+    }
+    this.NativeMusicPlayer.play();
+    this.setState({isPlaying: true});
+  };
+
   render() {
     // Add skip song (And another song in playlist)
     // make spooky
     return (
-      <View style={styles.container}>
-        <View style={styles.metaData}>
-          <Text style={styles.songTitle}>
-            {this.state.nowPlayingItemName || ' '}
-          </Text>
-          <Text style={styles.artist}>
-            {this.state.nowPlayingItemArtist || ' '}
-          </Text>
+      <ImageBackground
+        source={require('./assets/dark_gray_skulls.jpg')}
+        resizeMode="repeat"
+        style={{flex: 1, width: '100%'}}>
+        <View style={styles.container}>
+          <View style={styles.metaData}>
+            <Text style={styles.songTitle}>
+              {this.state.nowPlayingItemName || ' '}
+            </Text>
+            <Text style={styles.artist}>
+              {this.state.nowPlayingItemArtist || ' '}
+            </Text>
+          </View>
+          <PlayerProgress
+            isPlaying={this.state.isPlaying}
+            progress={this.state.progress}
+            NativeMusicPlayer={this.NativeMusicPlayer}
+            onPause={this.onPause}
+            onPlay={this.onPlay}
+          />
         </View>
-        <AnimatedCircularProgress
-          size={120}
-          width={15}
-          duration={990}
-          fill={this.state.progress * 100}
-          tintColor="#00e0ff"
-          backgroundColor="#3d5875">
-          {fill => {
-            if (this.state.isPlaying) {
-              return (
-                <Button
-                  onPress={() => {
-                    this.NativeMusicPlayer.pause();
-                    this.setState({isPlaying: false});
-                  }}
-                  title="Pause"
-                  color="#FF6347"
-                />
-              );
-            } else {
-              return (
-                <Button
-                  onPress={() => {
-                    if (this.state.isPlaying === undefined) {
-                      this.NativeMusicPlayer.initalizePlayerWithPlaylist(
-                        'Spooky',
-                      );
-                    }
-                    this.NativeMusicPlayer.play();
-                    this.setState({isPlaying: true});
-                  }}
-                  title="Play"
-                  color="#FF6347"
-                />
-              );
-            }
-          }}
-        </AnimatedCircularProgress>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -151,14 +138,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'hsla(0, 0%, 13%, .8)',
   },
   songTitle: {
     textAlign: 'center',
+    color: '#57A2D5',
     fontSize: 30,
+    fontWeight: '600',
+    letterSpacing: 2,
   },
   artist: {
     textAlign: 'center',
+    color: '#57A2D5',
+    fontWeight: '600',
+    letterSpacing: 2,
   },
   metaData: {
     margin: 20,

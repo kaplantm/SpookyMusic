@@ -15,8 +15,6 @@ import MediaPlayer
   override func supportedEvents() -> [String]! {
     return ["updateProgress", "updatePlayerState"]
   }
-  // ReactNativeEventEmitter is instantiated by React Native with the bridge.
-//  private static var eventEmitter: ReactNativeEventEmitter!
  
   //TODO: Change systemMusicPlayer to applicationMusicPlayer
 //  @objc var musicPlayer = MPMusicPlayerController.systemMusicPlayer
@@ -24,11 +22,6 @@ import MediaPlayer
   
   @objc static var isMusicAuthorized = false;
   
-  
-  
-//  @objc func getStatus(_ callback: RCTResponseSenderBlock) {
-//    callback([NSNull(), MusicPlayer.isOn])
-//  }
   
   @objc func getCurrentPlaybackTime(_ callback: RCTResponseSenderBlock) {
     let currentPlaybackTime = self.musicPlayer.currentPlaybackTime as Double
@@ -42,12 +35,10 @@ import MediaPlayer
   
 
   @objc func pause(){
-    print("pause")
     musicPlayer.pause()
   }
   
   @objc func play(){
-     print("play")
      musicPlayer.prepareToPlay()
      musicPlayer.play()
    }
@@ -59,6 +50,7 @@ import MediaPlayer
     let predicate = MPMediaPropertyPredicate(value: playlist, forProperty: MPMediaPlaylistPropertyName)
     myPlaylistQuery.addFilterPredicate(predicate)
     musicPlayer.setQueue(with: myPlaylistQuery)
+    musicPlayer.prepareToPlay()
     musicPlayer.play()
   }
   
@@ -116,9 +108,10 @@ import MediaPlayer
    }
   
   
-  
+
   @objc func updateNowPlayingInfo(){
-    if(nowPlayingItem != nil){
+    print("updateNowPlayingInfo")
+    if(self.musicPlayer.nowPlayingItem != nil){
         let nowPlayingItemName = self.musicPlayer.nowPlayingItem?.value(forProperty: "title")
         let nowPlayingItemArtist = self.musicPlayer.nowPlayingItem?.value(forProperty: "artist")
       let params : [String : Any?] = [
@@ -142,7 +135,6 @@ import MediaPlayer
     musicPlayer.beginGeneratingPlaybackNotifications()
 
     NotificationCenter.default.addObserver(self, selector:#selector(self.updateNowPlayingInfo), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
-   }
-
-  
+    NotificationCenter.default.addObserver(self, selector:#selector(self.updateNowPlayingInfo), name: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil)
+  }
 }
