@@ -1,13 +1,5 @@
-import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  Alert,
-  View,
-  NativeModules,
-  NativeEventEmitter,
-  Button,
-} from 'react-native';
+import React from 'react';
+import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 
 const PlayerProgress = ({
@@ -28,13 +20,30 @@ const PlayerProgress = ({
       backgroundColor="hsla(0, 0%, 40%, 1)">
       {fill => {
         if (isPlaying) {
-          return <Button onPress={onPause} title="Pause" color="#FF6347" />;
+          return (
+            <TouchableOpacity onPress={onPause}>
+              <Text style={styles.musicControlText}>Pause</Text>
+            </TouchableOpacity>
+          );
         } else {
-          return <Button onPress={onPlay} title="Play" color="#FF6347" />;
+          return (
+            <TouchableOpacity onPress={onPlay}>
+              <Text style={styles.musicControlText}>Play</Text>
+            </TouchableOpacity>
+          );
         }
       }}
     </AnimatedCircularProgress>
   );
 };
+
+const styles = StyleSheet.create({
+  musicControlText: {
+    textAlign: 'center',
+    color: '#FF6347',
+    fontSize: 30,
+    fontWeight: '600',
+  },
+});
 
 export default PlayerProgress;

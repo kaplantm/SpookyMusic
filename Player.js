@@ -1,9 +1,7 @@
-import Permissions from 'react-native-permissions';
 import React, {Component} from 'react';
 import {
   StyleSheet,
   Text,
-  Alert,
   View,
   NativeModules,
   NativeEventEmitter,
@@ -22,14 +20,12 @@ export default class Player extends Component {
 
   // Check the status of a single permission
   componentDidMount() {
-    // console.log('componentDidMount');
     this.NativeMusicPlayer = NativeModules.MusicPlayer;
     this.MusicPlayerEventEmitter = new NativeEventEmitter(
       NativeModules.MusicPlayer,
     );
     this.setOnPlayerStateChange();
     this.setOnProgress(({nowPlayingItemDuration, currentTime}) => {
-      //   console.log({currentTime, nowPlayingItemDuration});
       if (nowPlayingItemDuration) {
         this.setState({progress: currentTime / nowPlayingItemDuration});
       }
@@ -86,10 +82,6 @@ export default class Player extends Component {
     this.removeOnPlayerStateChange();
   }
 
-  onGenreClick = genre => {
-    this.NativeMusicPlayer.playGenre(genre);
-  };
-
   onPause = () => {
     this.NativeMusicPlayer.pause();
     this.setState({isPlaying: false});
@@ -104,13 +96,11 @@ export default class Player extends Component {
   };
 
   render() {
-    // Add skip song (And another song in playlist)
-    // make spooky
     return (
       <ImageBackground
         source={require('./assets/dark_gray_skulls.jpg')}
         resizeMode="repeat"
-        style={{flex: 1, width: '100%'}}>
+        style={styles.imageBackground}>
         <View style={styles.container}>
           <View style={styles.metaData}>
             <Text style={styles.songTitle}>
@@ -134,6 +124,7 @@ export default class Player extends Component {
 }
 
 const styles = StyleSheet.create({
+  imageBackground: {flex: 1, width: '100%'},
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -149,6 +140,7 @@ const styles = StyleSheet.create({
   },
   artist: {
     textAlign: 'center',
+    fontSize: 20,
     color: '#57A2D5',
     fontWeight: '600',
     letterSpacing: 2,
