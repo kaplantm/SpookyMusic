@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,119 +9,97 @@ import {
 } from 'react-native';
 import PlayerProgress from './PlayerProgress';
 
-export default class Player extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Player = () => {
+  const initialized = false;
+  const [progressState, setProgress] = useState(undefined);
+  const [nowPlayingItemNameState, setNowPlayingItemName] = useState('');
+  const [nowPlayingItemArtistState, setNowPlayingItemArtist] = useState('');
 
-  state = {
-    progress: 0,
-  };
+  const NativeMusicPlayer = NativeModules.MusicPlayer;
+  const MusicPlayerEventEmitter = new NativeEventEmitter(
+    NativeModules.MusicPlayer,
+  );
 
-  // Check the status of a single permission
-  componentDidMount() {
-    this.NativeMusicPlayer = NativeModules.MusicPlayer;
-    this.MusicPlayerEventEmitter = new NativeEventEmitter(
-      NativeModules.MusicPlayer,
-    );
-    this.setOnPlayerStateChange();
-    this.setOnProgress(({nowPlayingItemDuration, currentTime}) => {
+  let updateProgressSubscription;
+  let onPlayerStateChangeSubscription;
+
+  useEffect(() => {
+    setOnPlayerStateChange();
+    setOnProgress(({nowPlayingItemDuration, currentTime}) => {
       if (nowPlayingItemDuration) {
-        this.setState({progress: currentTime / nowPlayingItemDuration});
+        setProgress(currentTime / nowPlayingItemDuration);
       }
     });
-  }
+  }, [initialized]);
 
-  setOnPlayerStateChange(onPlayerStateChange) {
-    this.stopProgressTracker();
+  function setOnPlayerStateChange(onPlayerStateChange) {
+    stopProgressTracker();
 
-    this.NativeMusicPlayer.addPlayerStateObserver();
+    NativeMusicPlayer.addPlayerStateObserver();
 
-    this.onPlayerStateChangeSubscription = this.MusicPlayerEventEmitter.addListener(
+    onPlayerStateChangeSubscription = MusicPlayerEventEmitter.addListener(
       'updatePlayerState',
       ({nowPlayingItemName, nowPlayingItemArtist, isPlaying}) => {
-        this.setState({
-          nowPlayingItemName,
-          nowPlayingItemArtist,
-        });
+        setNowPlayingItemName(nowPlayingItemName);
+        setNowPlayingItemArtist(nowPlayingItemArtist);
       },
     );
   }
 
-  setOnProgress(onProgress) {
-    this.stopProgressTracker();
+  function setOnProgress(onProgress) {
+    stopProgressTracker();
 
-    this.NativeMusicPlayer.initalizeProgressTracker();
-    this.updateProgressSubscription = this.MusicPlayerEventEmitter.addListener(
+    NativeMusicPlayer.initalizeProgressTracker();
+    updateProgressSubscription = MusicPlayerEventEmitter.addListener(
       'updateProgress',
       onProgress,
     );
   }
 
-  stopProgressTracker() {
-    this.NativeMusicPlayer.invalidateProgressTracker();
-    this.removeOnProgess();
+  function stopProgressTracker() {
+    NativeMusicPlayer.invalidateProgressTracker();
+    removeOnProgess();
   }
 
-  removeOnProgess() {
-    if (this.updateProgressSubscription) {
-      this.updateProgressSubscription.remove();
-      this.updateProgressSubscription = null;
+  function removeOnProgess() {
+    if (updateProgressSubscription) {
+      updateProgressSubscription.remove();
+      updateProgressSubscription = null;
     }
   }
 
-  removeOnPlayerStateChange() {
-    if (this.onPlayerStateChangeSubscription) {
-      this.onPlayerStateChangeSubscription.remove();
-      this.onPlayerStateChangeSubscription = null;
+  function removeOnPlayerStateChange() {
+    if (onPlayerStateChangeSubscription) {
+      onPlayerStateChangeSubscription.remove();
+      onPlayerStateChangeSubscription = null;
     }
   }
 
-  componentWillUnmount() {
-    this.stopProgressTracker();
-    this.removeOnPlayerStateChange();
+  function componentWillUnmount() {
+    stopProgressTracker();
+    removeOnPlayerStateChange();
   }
 
-  onPause = () => {
-    this.NativeMusicPlayer.pause();
-    this.setState({isPlaying: false});
-  };
-
-  onPlay = () => {
-    if (this.state.isPlaying === undefined) {
-      this.NativeMusicPlayer.initalizePlayerWithPlaylist('Spooky');
-    }
-    this.NativeMusicPlayer.play();
-    this.setState({isPlaying: true});
-  };
-
-  render() {
-    return (
-      <ImageBackground
-        source={require('./assets/dark_gray_skulls.jpg')}
-        resizeMode="repeat"
-        style={styles.imageBackground}>
-        <View style={styles.container}>
-          <View style={styles.metaData}>
-            <Text style={styles.songTitle}>
-              {this.state.nowPlayingItemName || ' '}
-            </Text>
-            <Text style={styles.artist}>
-              {this.state.nowPlayingItemArtist || ' '}
-            </Text>
-          </View>
-          <PlayerProgress
-            isPlaying={this.state.isPlaying}
-            progress={this.state.progress}
-            NativeMusicPlayer={this.NativeMusicPlayer}
-            onPause={this.onPause}
-            onPlay={this.onPlay}
-          />
+  return (
+    <ImageBackground
+      source={require('./assets/dark_gray_skulls.jpg')}
+      resizeMode="repeat"
+      style={styles.imageBackground}>
+      <View style={styles.container}>
+        <View style={styles.metaData}>
+          <Text style={styles.songTitle}>{nowPlayingItemNameState || ' '}</Text>
+          <Text style={styles.artist}>{nowPlayingItemArtistState || ' '}</Text>
         </View>
-      </ImageBackground>
-    );
-  }
-}
+        <PlayerProgress
+          progress={progressState}
+          NativeMusicPlayer={NativeMusicPlayer}
+        />
+      </View>
+    </ImageBackground>
+  );
+};
+
+export default Player;
 
 const styles = StyleSheet.create({
   imageBackground: {flex: 1, width: '100%'},
