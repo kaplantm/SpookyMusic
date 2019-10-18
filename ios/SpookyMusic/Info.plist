@@ -2,30 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Permissions</key>
-	<string></string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>We do not use this feature.</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Needed to play music</string>
-	<key>NSMotionUsageDescription</key>
-	<string>We do not use this feature.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>customIosApp</string>
+	<string>SpookyMusic</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -33,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>SpookyMusic</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -57,6 +37,26 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Needed to play music</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We do not use this feature.</string>
+	<key>Permissions</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

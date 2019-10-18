@@ -1,4 +1,4 @@
-package com.customiosapp;
+package com.SpookyMusic;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "customIosApp";
+    return "SpookyMusic";
   }
 }

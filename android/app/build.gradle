@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.customiosapp"
+        applicationId "com.SpookyMusic"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -14,11 +14,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface customIosAppTests : XCTestCase
+@interface SpookyMusicTests : XCTestCase
 
 @end
 
-@implementation customIosAppTests
+@implementation SpookyMusicTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

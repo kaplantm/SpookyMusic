@@ -1,6 +1,6 @@
 //
 //  MusicPlayer.m
-//  customIosApp
+//  SpookyMusic
 //
 //  Created by Toni Kaplan on 9/27/19.
 //  Copyright © 2019 Facebook. All rights reserved.

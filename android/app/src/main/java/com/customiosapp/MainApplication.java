@@ -1,4 +1,4 @@
-package com.customiosapp;
+package com.SpookyMusic;
 
 import android.app.Application;
 import android.content.Context;

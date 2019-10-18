@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* customIosAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* customIosAppTests.m */; };
+		00E356F31AD99517003FC87E /* SpookyMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SpookyMusicTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -15,13 +15,13 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* customIosAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* customIosAppTests.m */; };
-		46CE0B0DE3C64F297AD211CA /* libPods-customIosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3A5696B27D5928F7EF4557 /* libPods-customIosApp.a */; };
-		7643C73E015B03B5A5DE6F74 /* libPods-customIosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C85F198E326FB2C37DBBF1 /* libPods-customIosAppTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* SpookyMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SpookyMusicTests.m */; };
+		46CE0B0DE3C64F297AD211CA /* libPods-SpookyMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3A5696B27D5928F7EF4557 /* libPods-SpookyMusic.a */; };
+		7643C73E015B03B5A5DE6F74 /* libPods-SpookyMusicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C85F198E326FB2C37DBBF1 /* libPods-SpookyMusicTests.a */; };
 		7856B927233E4FB800F88731 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B926233E4FB800F88731 /* MusicPlayer.swift */; };
 		7856B929233E507300F88731 /* MusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856B928233E507300F88731 /* MusicPlayer.m */; };
-		8B54201855676E4D1CBE3D13 /* libPods-customIosApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1EACB4D6B30B177A7B37A7 /* libPods-customIosApp-tvOS.a */; };
-		FE81C37AE9A3318C19E5D3C6 /* libPods-customIosApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4484FA9FC8083EE54AFB1F49 /* libPods-customIosApp-tvOSTests.a */; };
+		8B54201855676E4D1CBE3D13 /* libPods-SpookyMusic-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1EACB4D6B30B177A7B37A7 /* libPods-SpookyMusic-tvOS.a */; };
+		FE81C37AE9A3318C19E5D3C6 /* libPods-SpookyMusic-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4484FA9FC8083EE54AFB1F49 /* libPods-SpookyMusic-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,46 +30,46 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = customIosApp;
+			remoteInfo = SpookyMusic;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "customIosApp-tvOS";
+			remoteInfo = "SpookyMusic-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* customIosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = customIosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* SpookyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpookyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* customIosAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customIosAppTests.m; sourceTree = "<group>"; };
-		03F09D32187B6591DC7B5B3B /* Pods-customIosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp.debug.xcconfig"; path = "Target Support Files/Pods-customIosApp/Pods-customIosApp.debug.xcconfig"; sourceTree = "<group>"; };
-		11F52C93D600AD4BE288AAE6 /* Pods-customIosApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-customIosApp-tvOSTests/Pods-customIosApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		133F95882CBC8332A98A710F /* Pods-customIosApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-customIosApp-tvOSTests/Pods-customIosApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* customIosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = customIosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = customIosApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = customIosApp/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* SpookyMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpookyMusicTests.m; sourceTree = "<group>"; };
+		03F09D32187B6591DC7B5B3B /* Pods-SpookyMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusic.debug.xcconfig"; path = "Target Support Files/Pods-SpookyMusic/Pods-SpookyMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		11F52C93D600AD4BE288AAE6 /* Pods-SpookyMusic-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusic-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SpookyMusic-tvOSTests/Pods-SpookyMusic-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		133F95882CBC8332A98A710F /* Pods-SpookyMusic-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusic-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SpookyMusic-tvOSTests/Pods-SpookyMusic-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* SpookyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpookyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SpookyMusic/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SpookyMusic/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = customIosApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = customIosApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = customIosApp/main.m; sourceTree = "<group>"; };
-		24042512CE71BECF6B9A494C /* Pods-customIosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp.release.xcconfig"; path = "Target Support Files/Pods-customIosApp/Pods-customIosApp.release.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* customIosApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "customIosApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* customIosApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "customIosApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F1EACB4D6B30B177A7B37A7 /* libPods-customIosApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-customIosApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3A5696B27D5928F7EF4557 /* libPods-customIosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-customIosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4484FA9FC8083EE54AFB1F49 /* libPods-customIosApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-customIosApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		51B9F1A9F17A51658F249558 /* Pods-customIosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-customIosAppTests/Pods-customIosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		53C85F198E326FB2C37DBBF1 /* libPods-customIosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-customIosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7856B925233E4FB800F88731 /* customIosApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "customIosApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpookyMusic/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SpookyMusic/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SpookyMusic/main.m; sourceTree = "<group>"; };
+		24042512CE71BECF6B9A494C /* Pods-SpookyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusic.release.xcconfig"; path = "Target Support Files/Pods-SpookyMusic/Pods-SpookyMusic.release.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* SpookyMusic-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpookyMusic-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* SpookyMusic-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpookyMusic-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F1EACB4D6B30B177A7B37A7 /* libPods-SpookyMusic-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpookyMusic-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3A5696B27D5928F7EF4557 /* libPods-SpookyMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpookyMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4484FA9FC8083EE54AFB1F49 /* libPods-SpookyMusic-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpookyMusic-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51B9F1A9F17A51658F249558 /* Pods-SpookyMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusicTests.debug.xcconfig"; path = "Target Support Files/Pods-SpookyMusicTests/Pods-SpookyMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53C85F198E326FB2C37DBBF1 /* libPods-SpookyMusicTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpookyMusicTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7856B925233E4FB800F88731 /* SpookyMusic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpookyMusic-Bridging-Header.h"; sourceTree = "<group>"; };
 		7856B926233E4FB800F88731 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		7856B928233E507300F88731 /* MusicPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayer.m; sourceTree = "<group>"; };
-		9FBBED81F1705927EC0E23CA /* Pods-customIosApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-customIosApp-tvOS/Pods-customIosApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		A0B0B5097DA41171C4C69042 /* Pods-customIosApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-customIosApp-tvOS/Pods-customIosApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		D9425BA7D22E14E82E36A549 /* Pods-customIosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-customIosAppTests.release.xcconfig"; path = "Target Support Files/Pods-customIosAppTests/Pods-customIosAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9FBBED81F1705927EC0E23CA /* Pods-SpookyMusic-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusic-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SpookyMusic-tvOS/Pods-SpookyMusic-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A0B0B5097DA41171C4C69042 /* Pods-SpookyMusic-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusic-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SpookyMusic-tvOS/Pods-SpookyMusic-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D9425BA7D22E14E82E36A549 /* Pods-SpookyMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpookyMusicTests.release.xcconfig"; path = "Target Support Files/Pods-SpookyMusicTests/Pods-SpookyMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7643C73E015B03B5A5DE6F74 /* libPods-customIosAppTests.a in Frameworks */,
+				7643C73E015B03B5A5DE6F74 /* libPods-SpookyMusicTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46CE0B0DE3C64F297AD211CA /* libPods-customIosApp.a in Frameworks */,
+				46CE0B0DE3C64F297AD211CA /* libPods-SpookyMusic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B54201855676E4D1CBE3D13 /* libPods-customIosApp-tvOS.a in Frameworks */,
+				8B54201855676E4D1CBE3D13 /* libPods-SpookyMusic-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,20 +103,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE81C37AE9A3318C19E5D3C6 /* libPods-customIosApp-tvOSTests.a in Frameworks */,
+				FE81C37AE9A3318C19E5D3C6 /* libPods-SpookyMusic-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* customIosAppTests */ = {
+		00E356EF1AD99517003FC87E /* SpookyMusicTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* customIosAppTests.m */,
+				00E356F21AD99517003FC87E /* SpookyMusicTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = customIosAppTests;
+			path = SpookyMusicTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -127,7 +127,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* customIosApp */ = {
+		13B07FAE1A68108700A75B9A /* SpookyMusic */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -138,10 +138,10 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				7856B926233E4FB800F88731 /* MusicPlayer.swift */,
-				7856B925233E4FB800F88731 /* customIosApp-Bridging-Header.h */,
+				7856B925233E4FB800F88731 /* SpookyMusic-Bridging-Header.h */,
 				7856B928233E507300F88731 /* MusicPlayer.m */,
 			);
-			name = customIosApp;
+			name = SpookyMusic;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -149,10 +149,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				3F3A5696B27D5928F7EF4557 /* libPods-customIosApp.a */,
-				2F1EACB4D6B30B177A7B37A7 /* libPods-customIosApp-tvOS.a */,
-				4484FA9FC8083EE54AFB1F49 /* libPods-customIosApp-tvOSTests.a */,
-				53C85F198E326FB2C37DBBF1 /* libPods-customIosAppTests.a */,
+				3F3A5696B27D5928F7EF4557 /* libPods-SpookyMusic.a */,
+				2F1EACB4D6B30B177A7B37A7 /* libPods-SpookyMusic-tvOS.a */,
+				4484FA9FC8083EE54AFB1F49 /* libPods-SpookyMusic-tvOSTests.a */,
+				53C85F198E326FB2C37DBBF1 /* libPods-SpookyMusicTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,14 +160,14 @@
 		7F8D15587A1F6809C8BFDC92 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03F09D32187B6591DC7B5B3B /* Pods-customIosApp.debug.xcconfig */,
-				24042512CE71BECF6B9A494C /* Pods-customIosApp.release.xcconfig */,
-				9FBBED81F1705927EC0E23CA /* Pods-customIosApp-tvOS.debug.xcconfig */,
-				A0B0B5097DA41171C4C69042 /* Pods-customIosApp-tvOS.release.xcconfig */,
-				133F95882CBC8332A98A710F /* Pods-customIosApp-tvOSTests.debug.xcconfig */,
-				11F52C93D600AD4BE288AAE6 /* Pods-customIosApp-tvOSTests.release.xcconfig */,
-				51B9F1A9F17A51658F249558 /* Pods-customIosAppTests.debug.xcconfig */,
-				D9425BA7D22E14E82E36A549 /* Pods-customIosAppTests.release.xcconfig */,
+				03F09D32187B6591DC7B5B3B /* Pods-SpookyMusic.debug.xcconfig */,
+				24042512CE71BECF6B9A494C /* Pods-SpookyMusic.release.xcconfig */,
+				9FBBED81F1705927EC0E23CA /* Pods-SpookyMusic-tvOS.debug.xcconfig */,
+				A0B0B5097DA41171C4C69042 /* Pods-SpookyMusic-tvOS.release.xcconfig */,
+				133F95882CBC8332A98A710F /* Pods-SpookyMusic-tvOSTests.debug.xcconfig */,
+				11F52C93D600AD4BE288AAE6 /* Pods-SpookyMusic-tvOSTests.release.xcconfig */,
+				51B9F1A9F17A51658F249558 /* Pods-SpookyMusicTests.debug.xcconfig */,
+				D9425BA7D22E14E82E36A549 /* Pods-SpookyMusicTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -182,9 +182,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* customIosApp */,
+				13B07FAE1A68108700A75B9A /* SpookyMusic */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* customIosAppTests */,
+				00E356EF1AD99517003FC87E /* SpookyMusicTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7F8D15587A1F6809C8BFDC92 /* Pods */,
@@ -197,10 +197,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* customIosApp.app */,
-				00E356EE1AD99517003FC87E /* customIosAppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* customIosApp-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* customIosApp-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* SpookyMusic.app */,
+				00E356EE1AD99517003FC87E /* SpookyMusicTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* SpookyMusic-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* SpookyMusic-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* customIosAppTests */ = {
+		00E356ED1AD99517003FC87E /* SpookyMusicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "customIosAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SpookyMusicTests" */;
 			buildPhases = (
 				23806464AC171A30275759C9 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -222,14 +222,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = customIosAppTests;
-			productName = customIosAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* customIosAppTests.xctest */;
+			name = SpookyMusicTests;
+			productName = SpookyMusicTests;
+			productReference = 00E356EE1AD99517003FC87E /* SpookyMusicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* customIosApp */ = {
+		13B07F861A680F5B00A75B9A /* SpookyMusic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "customIosApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SpookyMusic" */;
 			buildPhases = (
 				3F20EAC07981EC2566E4E494 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -242,14 +242,14 @@
 			);
 			dependencies = (
 			);
-			name = customIosApp;
-			productName = customIosApp;
-			productReference = 13B07F961A680F5B00A75B9A /* customIosApp.app */;
+			name = SpookyMusic;
+			productName = SpookyMusic;
+			productReference = 13B07F961A680F5B00A75B9A /* SpookyMusic.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* customIosApp-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* SpookyMusic-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "customIosApp-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SpookyMusic-tvOS" */;
 			buildPhases = (
 				35EC54D33B2574A55F7CBDB4 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -262,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = "customIosApp-tvOS";
-			productName = "customIosApp-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* customIosApp-tvOS.app */;
+			name = "SpookyMusic-tvOS";
+			productName = "SpookyMusic-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* SpookyMusic-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* customIosApp-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* SpookyMusic-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "customIosApp-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SpookyMusic-tvOSTests" */;
 			buildPhases = (
 				21059048BE7CB8ED6732F41A /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -281,9 +281,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "customIosApp-tvOSTests";
-			productName = "customIosApp-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* customIosApp-tvOSTests.xctest */;
+			name = "SpookyMusic-tvOSTests";
+			productName = "SpookyMusic-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* SpookyMusic-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -315,7 +315,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "customIosApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SpookyMusic" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -329,10 +329,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* customIosApp */,
-				00E356ED1AD99517003FC87E /* customIosAppTests */,
-				2D02E47A1E0B4A5D006451C7 /* customIosApp-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* customIosApp-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* SpookyMusic */,
+				00E356ED1AD99517003FC87E /* SpookyMusicTests */,
+				2D02E47A1E0B4A5D006451C7 /* SpookyMusic-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* SpookyMusic-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -401,7 +401,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-customIosApp-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SpookyMusic-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,7 +423,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-customIosAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SpookyMusicTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -459,7 +459,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-customIosApp-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SpookyMusic-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -481,7 +481,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-customIosApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SpookyMusic-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -533,7 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* customIosAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* SpookyMusicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* customIosAppTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* SpookyMusicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,12 +570,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* customIosApp */;
+			target = 13B07F861A680F5B00A75B9A /* SpookyMusic */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* customIosApp-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* SpookyMusic-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -587,7 +587,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = customIosApp;
+			path = SpookyMusic;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -595,7 +595,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51B9F1A9F17A51658F249558 /* Pods-customIosAppTests.debug.xcconfig */;
+			baseConfigurationReference = 51B9F1A9F17A51658F249558 /* Pods-SpookyMusicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,7 +604,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = customIosAppTests/Info.plist;
+				INFOPLIST_FILE = SpookyMusicTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -614,19 +614,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/customIosApp.app/customIosApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpookyMusic.app/SpookyMusic";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9425BA7D22E14E82E36A549 /* Pods-customIosAppTests.release.xcconfig */;
+			baseConfigurationReference = D9425BA7D22E14E82E36A549 /* Pods-SpookyMusicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = JPF5Z7WZGR;
-				INFOPLIST_FILE = customIosAppTests/Info.plist;
+				INFOPLIST_FILE = SpookyMusicTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -636,20 +636,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/customIosApp.app/customIosApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpookyMusic.app/SpookyMusic";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03F09D32187B6591DC7B5B3B /* Pods-customIosApp.debug.xcconfig */;
+			baseConfigurationReference = 03F09D32187B6591DC7B5B3B /* Pods-SpookyMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = JPF5Z7WZGR;
-				INFOPLIST_FILE = customIosApp/Info.plist;
+				INFOPLIST_FILE = SpookyMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -657,8 +657,8 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = customIosApp;
-				SWIFT_OBJC_BRIDGING_HEADER = "customIosApp-Bridging-Header.h";
+				PRODUCT_NAME = SpookyMusic;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpookyMusic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -667,13 +667,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24042512CE71BECF6B9A494C /* Pods-customIosApp.release.xcconfig */;
+			baseConfigurationReference = 24042512CE71BECF6B9A494C /* Pods-SpookyMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JPF5Z7WZGR;
-				INFOPLIST_FILE = customIosApp/Info.plist;
+				INFOPLIST_FILE = SpookyMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -681,8 +681,8 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = customIosApp;
-				SWIFT_OBJC_BRIDGING_HEADER = "customIosApp-Bridging-Header.h";
+				PRODUCT_NAME = SpookyMusic;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpookyMusic-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -690,7 +690,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FBBED81F1705927EC0E23CA /* Pods-customIosApp-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 9FBBED81F1705927EC0E23CA /* Pods-SpookyMusic-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -701,14 +701,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "customIosApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "SpookyMusic-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.customIosApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SpookyMusic-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -718,7 +718,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0B0B5097DA41171C4C69042 /* Pods-customIosApp-tvOS.release.xcconfig */;
+			baseConfigurationReference = A0B0B5097DA41171C4C69042 /* Pods-SpookyMusic-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -729,14 +729,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "customIosApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "SpookyMusic-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.customIosApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SpookyMusic-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -746,7 +746,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 133F95882CBC8332A98A710F /* Pods-customIosApp-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 133F95882CBC8332A98A710F /* Pods-SpookyMusic-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -756,24 +756,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "customIosApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "SpookyMusic-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.customIosApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SpookyMusic-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/customIosApp-tvOS.app/customIosApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpookyMusic-tvOS.app/SpookyMusic-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11F52C93D600AD4BE288AAE6 /* Pods-customIosApp-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 11F52C93D600AD4BE288AAE6 /* Pods-SpookyMusic-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -783,17 +783,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "customIosApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "SpookyMusic-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.customIosApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SpookyMusic-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/customIosApp-tvOS.app/customIosApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpookyMusic-tvOS.app/SpookyMusic-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -900,7 +900,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "customIosAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SpookyMusicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -909,7 +909,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "customIosApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SpookyMusic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -918,7 +918,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "customIosApp-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SpookyMusic-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -927,7 +927,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "customIosApp-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SpookyMusic-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -936,7 +936,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "customIosApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SpookyMusic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "customIosApp.app"
-               BlueprintName = "customIosApp"
-               ReferencedContainer = "container:customIosApp.xcodeproj">
+               BuildableName = "SpookyMusic.app"
+               BlueprintName = "SpookyMusic"
+               ReferencedContainer = "container:SpookyMusic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "customIosAppTests.xctest"
-               BlueprintName = "customIosAppTests"
-               ReferencedContainer = "container:customIosApp.xcodeproj">
+               BuildableName = "SpookyMusicTests.xctest"
+               BlueprintName = "SpookyMusicTests"
+               ReferencedContainer = "container:SpookyMusic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -55,34 +55,32 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "SpookyMusic.app"
+            BlueprintName = "SpookyMusic"
+            ReferencedContainer = "container:SpookyMusic.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "customIosAppTests.xctest"
-               BlueprintName = "customIosAppTests"
-               ReferencedContainer = "container:customIosApp.xcodeproj">
+               BuildableName = "SpookyMusicTests.xctest"
+               BlueprintName = "SpookyMusicTests"
+               ReferencedContainer = "container:SpookyMusic.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "customIosApp.app"
-            BlueprintName = "customIosApp"
-            ReferencedContainer = "container:customIosApp.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      buildConfiguration = "Release"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -94,13 +92,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "customIosApp.app"
-            BlueprintName = "customIosApp"
-            ReferencedContainer = "container:customIosApp.xcodeproj">
+            BuildableName = "SpookyMusic.app"
+            BlueprintName = "SpookyMusic"
+            ReferencedContainer = "container:SpookyMusic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -113,9 +109,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "customIosApp.app"
-            BlueprintName = "customIosApp"
-            ReferencedContainer = "container:customIosApp.xcodeproj">
+            BuildableName = "SpookyMusic.app"
+            BlueprintName = "SpookyMusic"
+            ReferencedContainer = "container:SpookyMusic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
